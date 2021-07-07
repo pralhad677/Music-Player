@@ -1,0 +1,46 @@
+.h1{
+    color:red;
+}
+
+.div1 {
+    /* display:block; */
+    position: relative;
+    height: 50vh;
+    min-height: 500px;
+    min-width: 465px;
+    width: 70vw;
+    /* margin: 20px auto ; */
+    margin-left: auto; 
+    margin-right: 120px;
+    /* background: #fc00ff; fallback for old browsers */
+    background: greenyellow; /* f //allback for old browsers */
+     
+    background: -webkit-linear-gradient(to right, greenyellow, #00dbde);  
+    background: linear-gradient(to right,#fc00ff, #00dbde);
+    border-radius: 20px;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+}
+ 
+.imgParent {
+    height: 300px;
+    width:350px;
+    background-color: #fff;
+    display: block;
+    /* margin: auto; */
+    margin-left: auto; 
+    margin-right: 20px;
+    border-radius: 30px;
+    
+    
+}
+/* fitting image into its parent using position context  */
+.img {
+    position:relative;
+    height: 100%;
+    width:100%;
+    border-radius: 30px;
+    background-position: 0px 70px;
+    
+}

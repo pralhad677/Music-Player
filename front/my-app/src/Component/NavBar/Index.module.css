@@ -1,0 +1,14 @@
+.parent {
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    color:red;
+    min-height:300px ;
+    min-width: 200px;
+    height:30vh;
+    width:20vw;
+}
+
+li{
+    list-style: none;
+}
