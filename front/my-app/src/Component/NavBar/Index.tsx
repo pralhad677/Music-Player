@@ -20,9 +20,10 @@ import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 import MuiListItem from "@material-ui/core/ListItem";
+import Portal from '../Portal/Index'
 
 const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
+  createStyles({ 
     root: {
       width: '100%',
       maxWidth: 360,
@@ -70,6 +71,8 @@ export default function SimpleList() {
     setSelectedIndex(index);
   };
 
+
+  
 
   return (
     <div className={classes.root}>
@@ -129,7 +132,7 @@ export default function SimpleList() {
           </Typography>
           </AccordionDetails>
         </Accordion>
-  
+  <Portal />
     </div>
   );
 }

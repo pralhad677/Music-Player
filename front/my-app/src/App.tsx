@@ -9,8 +9,9 @@ import NavBar from './Component/NavBar/Index'
 import { ThemeProvider,Theme } from '@material-ui/core/styles';
 import { red } from '@material-ui/core/colors';
 import { createMuiTheme } from '@material-ui/core/styles';
-
-interface Props{ 
+import  Portal  from './Component/Portal/Index'
+// import Portal from './Component/Portal/INdex'
+interface Props{  
   
 }
 
@@ -28,6 +29,7 @@ const theme:Theme = createMuiTheme({
     background: {
       default: '#fff',
     },
+    
   },
 });
 
@@ -48,6 +50,12 @@ let App:React.FC<Props>=()=> {
           </Route>
           <Route path="/signup">
           <SignUp />
+          </Route>
+          <Route path="/portal">
+          <Portal />
+          </Route>
+          <Route path="*">
+          <h1>Not Found</h1>
           </Route>
         </Switch>
     </ThemeProvider>,

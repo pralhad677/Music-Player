@@ -1,4 +1,5 @@
 import React from 'react'
+import './index.module.css'
 
 import {gql,useMutation,useQuery,useLazyQuery} from '@apollo/client'
 
@@ -84,7 +85,7 @@ function Index() {
       <button onClick={fetchAllData}>fetch all data</button>
       {
       data &&  data.users.map((item:User) => {
-          return <li key={item._id}>a</li>
+        return <li  key={item._id}>a</li>
         })
       }
     </div>

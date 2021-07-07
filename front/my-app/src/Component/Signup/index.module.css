@@ -1,0 +1,13 @@
+body {
+    counter-reset: section;
+  }
+  
+  li::before {
+    counter-increment: section;
+    content: counter(section) ": ";
+    
+  }
+
+  li {
+    list-style-type:none
+  }
