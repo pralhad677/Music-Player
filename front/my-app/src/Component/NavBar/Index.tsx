@@ -145,7 +145,7 @@ export default function SimpleList() {
         </Accordion>
       <Portal open={open} handleClose={ handleClose}>
           <Button variant="outlined" color="secondary" onClick={handleToggle} className={ classes.button}>
-        SinUp
+        SinUp1
       </Button>
   </Portal>
     </div> 
