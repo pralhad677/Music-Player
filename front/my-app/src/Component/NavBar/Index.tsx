@@ -8,8 +8,9 @@ import { ListItemProps } from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon'; 
 import ListItemText from '@material-ui/core/ListItemText';
 import Divider from '@material-ui/core/Divider';
-import InboxIcon from '@material-ui/icons/Inbox';
+import InboxIcon from '@material-ui/icons/Inbox'; 
 import DraftsIcon from '@material-ui/icons/Drafts';
+import Button from '@material-ui/core/Button'; 
 import {Home} from '@material-ui/icons';
 import {Search} from '@material-ui/icons';
 
@@ -20,15 +21,19 @@ import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 import MuiListItem from "@material-ui/core/ListItem";
+import Portal from '../Portal/Index'
 
 const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
+  createStyles({ 
     root: {
       width: '100%',
       maxWidth: 360,
       // backgroundColor: theme.palette.background.paper,
       backgroundColor:"#1d0002",
     },
+    button: {
+      backgroundColor:"white"
+    }
   }),  
 );
 
@@ -70,6 +75,15 @@ export default function SimpleList() {
     setSelectedIndex(index);
   };
 
+  const [open, setOpen] = React.useState(false);
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+  const handleToggle = () => {
+    setOpen(!open);
+  };
+  
 
   return (
     <div className={classes.root}>
@@ -122,14 +136,18 @@ export default function SimpleList() {
           selected={selectedIndex === 3}
           onClick={(event) => handleListItemClick(event, 3)}
         >
-          <ListItemText primary="Spam" />
+          <ListItemText primary="Spam" /> 
         </ListItem>
       </List>
       
-          </Typography>
+          </Typography> 
           </AccordionDetails>
         </Accordion>
-  
-    </div>
+      <Portal open={open} handleClose={ handleClose}>
+          <Button variant="outlined" color="secondary" onClick={handleToggle} className={ classes.button}>
+        SinUp
+      </Button>
+  </Portal>
+    </div> 
   );
 }
