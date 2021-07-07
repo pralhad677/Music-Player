@@ -10,6 +10,7 @@ import { ThemeProvider,Theme } from '@material-ui/core/styles';
 import { red } from '@material-ui/core/colors';
 import { createMuiTheme } from '@material-ui/core/styles';
 import  Portal  from './Component/Portal/Index'
+import  Prac  from './Component/Prac/Index'
 // import Portal from './Component/Portal/INdex'
 interface Props{  
   
@@ -48,15 +49,13 @@ let App:React.FC<Props>=()=> {
             <Welcome />
             
           </Route>
-          <Route path="/signup">
-          <SignUp />
+          <Route path="/prac">
+              <Prac />
           </Route>
-          <Route path="/portal">
-          <Portal />
-          </Route>
+          
           <Route path="*">
           <h1>Not Found</h1>
-          </Route>
+          </Route> 
         </Switch>
     </ThemeProvider>,
      

@@ -28,22 +28,27 @@ const useStyles = makeStyles((theme: Theme) =>
     }
   }),
 );
+interface Props{
+  open: boolean,
+  handleClose: () => void
+}
 
-export default function SimpleBackdrop() {
+let SimpleBackdrop: React.FC<Props> = ({ children,open,handleClose})=> {
   const classes = useStyles();
-  const [open, setOpen] = React.useState(false);
+  // const [open, setOpen] = React.useState(false);
 
-  const handleClose = () => {
-    setOpen(false);
-  };
-  const handleToggle = () => {
-    setOpen(!open);
-  };
+  // const handleClose = () => {
+  //   setOpen(false);
+  // };
+  // const handleToggle = () => {
+  //   setOpen(!open);
+  // };
 return (
     <div>
-    <Button variant="outlined" color="secondary" onClick={handleToggle} className={ classes.button}>
+    {/* <Button variant="outlined" color="secondary" onClick={handleToggle} className={ classes.button}>
         SinUp
-      </Button>
+      </Button> */}
+    {children}
       <Backdrop className={classes.backdrop} open={open}  >
         <Signup />
         <CloseIcon className={classes.close} onClick={handleClose} />
@@ -52,3 +57,4 @@ return (
   );
 }
   
+export default SimpleBackdrop
